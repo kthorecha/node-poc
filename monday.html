@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://cdn.plot.ly/plotly-2.0.0.min.js'></script>
+    <title>Monday</title>
+</head>
+
+<body>
+    <h2>
+        Today Is Monday!!
+    </h2>
+    <h4>
+        <div id="datetime"></div>
+    </h4>
+    <div id="myDiv">
+        <!-- chart rendered here -->
+    </div>
+    <footer>
+        <a href="/home">Go to home</a>
+    </footer>
+    <script>
+        let datetime = new Date();
+        document.getElementById('datetime').innerText = datetime.toTimeString();
+
+        // chart
+        var data = [
+            {
+                x: ['giraffes', 'orangutans', 'monkeys'],
+                y: [20, 14, 23],
+                type: 'bar'
+            }
+        ];
+
+        Plotly.newPlot('myDiv', data);
+    </script>
+</body>
+
+</html>
