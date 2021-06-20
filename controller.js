@@ -4,8 +4,6 @@ const url = require('url');
 module.exports = http.createServer((req, res) => {
     var service = require('./service');
     const reqUrl = url.parse(req.url, true);
-    const time = new Date().getTime();
-    res.time = time;
 
     // get
     if (reqUrl.pathname == '/home' && req.method === 'GET') {
