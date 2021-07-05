@@ -6,7 +6,7 @@ module.exports = http.createServer((req, res) => {
     const reqUrl = url.parse(req.url, true);
 
     // get
-    if (reqUrl.pathname == '/home' && req.method === 'GET') {
+    if ((reqUrl.pathname == '/home' || reqUrl.pathname == '/') && req.method === 'GET') {
         service.homePage(req, res);
     } else if (reqUrl.pathname == '/monday' && req.method === 'GET') {
         service.monday(req, res);
